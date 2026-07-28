@@ -15,7 +15,7 @@ app.use(cookieParser());
 
 app.use(cors({
     origin: [
-        "https://dealercatalogue.netlify.app",
+        "https://eedealer.netlify.app",
         "https://dealer.eternalessence.in"
     ],
     credentials: true
