@@ -139,13 +139,11 @@ app.post("/login", (req, res) => {
     );
 
     res.cookie("dealerToken", token, {
-
-        httpOnly: true,
-        sameSite: "lax",
-        secure: process.env.NODE_ENV === "production",
-        maxAge: 1000 * 60 * 60 * 12
-
-    });
+    httpOnly: true,
+    secure: true,
+    sameSite: "none",
+    maxAge: 1000 * 60 * 60 * 12
+});
 
     res.json({
         success: true
