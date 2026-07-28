@@ -8,7 +8,7 @@ const path = require("path");
 const products = require("./products");
 
 const app = express();
-
+const cors = require("cors");
 app.use(express.json());
 app.use(cookieParser());
 
@@ -231,24 +231,12 @@ app.post("/logout",
         STATIC FILES
 ====================================*/
 
-app.use(express.static(__dirname));
-
-
-
-app.get("/",
-
-    (req, res) => {
-
-        res.sendFile(
-
-            path.join(__dirname, "index.html")
-
-        );
-
-    }
-
-);
-
+app.get("/", (req, res) => {
+    res.json({
+        success: true,
+        message: "Dealer Catalogue API is running"
+    });
+});
 
 
 app.listen(PORT, () => {
