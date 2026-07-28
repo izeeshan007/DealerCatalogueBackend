@@ -12,6 +12,15 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+
+app.use(cors({
+    origin: [
+        "https://dealercatalogue.netlify.app",
+        "https://dealer.eternalessence.in"
+    ],
+    credentials: true
+}));
+
 const PORT = process.env.PORT || 3000;
 const SECRET = process.env.JWT_SECRET;
 
